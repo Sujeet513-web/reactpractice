@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Practice1 from './Practice1';
 
 function App() {
+  const [bgcolor, setbgcolor] = useState(true)
+  const bg = () => {
+    setbgcolor(!bgcolor)
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App text-2xl" >
+        <div className='border-2 border-black w-[300px] h-[300px]' style={{
+          background: bgcolor ? "white" : "red",
+          color:bgcolor ?"red":"white"
+        }}>
+          Sujeet Solanki
+        </div>
+        {/* <Practice1 name="sujeet" number="9460521812"  email="sujeetsolanki513@gmail.com" bg={bg}/> */}
+      </div>
+      <div>
+        <Practice1 bg={bg} />
+
+      </div>
+
+    </>
+
+
   );
 }
 
